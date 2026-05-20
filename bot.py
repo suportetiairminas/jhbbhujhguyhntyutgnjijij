@@ -5,10 +5,10 @@ import sys
 
 
 
-PLANILHA_1 = r"C:\Users\SuportedeTI-AirMinas\AIR MINAS AR CONDICIONADO LTDA\TI - Documentos\CONTROLE DE ATIVOS\Inventario_TI_AirMinas.xlsx"
+PLANILHA_1 = r"C:\Users\SuportedeTI-AirMinas\AIR MINAS AR CONDICIONADO LTDA\TI - Documentos\CONTROLE DE ATIVOS\Inventario_TI_AirMinas.xlsx"#local da planilha
           
 
-if sys.argv[1] == "--contar":
+if sys.argv[1] == "--contar":#comando de contar
     os.system("taskkill /im excel.exe /f || cls")
     mimir(2)
     para = False
@@ -21,11 +21,11 @@ if sys.argv[1] == "--contar":
         if para:
             break
 
-    meu = pd.read_excel(PLANILHA_1, sheet_name="Inventário", header=1)#le a planilha na parte de inventario, e a 1 linha conta como read
-    oio = meu.columns
+    meu = pd.read_excel(PLANILHA_1, sheet_name="Inventário", header=1)#le a planilha, na parte de inventario neste caso, e a 1 linha conta como read
+    oio = meu.columns#array contendo todos os nomes das colunas em meu
     numero = 0
     print("temos:\n")
-    for i in oio:
+    for i in oio:#printa a coluna
         numero = numero + 1
         print(f'[{numero}] coluna: ({i})')
     catigoria = input("diga a coluna que sera metrificada:  ")
@@ -63,6 +63,6 @@ if sys.argv[1] == "--modificar":
 
     meu = pd.read_excel(PLANILHA_1, sheet_name="Inventário", header=1)#le a planilha na parte de inventario, e a 1 linha conta como read
 
-    meu = meu.drop_duplicates(subset=['Cód. Patrimônio'])
+    meu = meu.drop_duplicates(subset=['Cód. Patrimônio'])#apaga as duplicatas em codigo de patrimonio
 
     meu.to_excel("pertence.xlsx", index=False)

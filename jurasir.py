@@ -23,7 +23,7 @@ cmd = (
 
 telas = subprocess.check_output(cmd, shell=True, encoding="CP1252", errors="replace")#executa
 
-pasta = os.path.expanduser("~/")+"Downloads"
+pasta = os.path.expanduser("~/")+"Downloads"#onde esta a pasta de downloads no windows
 
 arquivo = os.path.join(pasta, "informacao_para_nilson.txt")#cria o arquivo informacao_para_nilson.txt
 # Abra o arquivo em modo de escrita e insira o texto

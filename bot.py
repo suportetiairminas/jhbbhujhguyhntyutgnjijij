@@ -3,7 +3,11 @@ import os
 from time import sleep as mimir
 import sys
 
-
+if sys.argv[1] == False:
+    print("""--achar : acha arquivos em uma planinha
+--contar  : conta quantos arquivos tem em uma planilha
+--modificar : pode modificar a planilha""")
+    exit()
 
 PLANILHA_1 = r"C:\Users\SuportedeTI-AirMinas\AIR MINAS AR CONDICIONADO LTDA\TI - Documentos\CONTROLE DE ATIVOS\Inventario_TI_AirMinas.xlsx"#local da planilha
           
@@ -86,9 +90,9 @@ if sys.argv[1] == "--achar":
 
     catigoria = input("diga a coluna que sera metrificada:  ")
 
-for k in items:
-    if not meu[catigoria].astype(str).isin(k).any():
-        print(f"\033[31m{k} nao esta na planilha\033[m")
+    for k in items:
+        if not meu[catigoria].astype(str).isin(k).any():
+            print(f"\033[31m{k} nao esta na planilha\033[m")
 
     for i in range(len(meu)):
         if str(meu.at[i,catigoria]) in items:

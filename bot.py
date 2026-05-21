@@ -51,6 +51,53 @@ if sys.argv[1] == "--contar":#comando de contar
 
     df.to_excel("pertence.xlsx", index=False)
 
+if sys.argv[1] == "--achar":
+    os.system("taskkill /im excel.exe /f || cls")
+    mimir(2)
+
+    for root,dirs,arquivos in os.walk("C:\\"):
+        for i in arquivos:
+            if  "pertence.xlsx" == i:#deleta outras versoes do pertence
+                os.remove(f"{root}\\{i}")
+                break
+
+    meu = pd.read_excel(PLANILHA_1, sheet_name="Inventário", header=1)#le a planilha na parte de inventario, e a 1 linha conta como read
+
+    teste = pd.DataFrame(columns=meu.columns)
+    teste["numero"] = pd.Series(dtype="int")
+
+
+    conta = int(input("manda quantos items vc quer procurar:  "))
+    items = []
+
+    os.system('cls')
+    print("temos:\n")
+
+    oio = meu.columns#array contendo todos os nomes das colunas em meu
+
+    for i in oio:#printa a coluna
+        numero = numero + 1
+        print(f'[{numero}] coluna: ({i})')
+
+    for i in range(conta):
+        items.append(input("manda o item:  "))
+
+    numero = 0
+
+    catigoria = input("diga a coluna que sera metrificada:  ")
+
+for k in items:
+    if not meu[catigoria].astype(str).isin(k).any():
+        print(f"\033[31m{k} nao esta na planilha\033[m")
+
+    for i in range(len(meu)):
+        if str(meu.at[i,catigoria]) in items:
+            teste.at[i,"numero"] = i
+            for j in range(len(meu.columns)):
+                teste.at[i,oio[j]] = meu.at[i,oio[j]]
+
+    teste.to_excel("pertence.xlsx", index=False)
+
 if sys.argv[1] == "--modificar":
     os.system("taskkill /im excel.exe /f || cls")
     mimir(2)

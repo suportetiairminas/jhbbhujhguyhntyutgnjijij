@@ -3,11 +3,13 @@ import os
 from time import sleep as mimir
 import sys
 
-if sys.argv[1] == False:
-    print("""--achar : acha arquivos em uma planinha
+
+if len(sys.argv) > 1:
+    if sys.argv[1] == "False":
+        print("""--achar : acha arquivos em uma planinha
 --contar  : conta quantos arquivos tem em uma planilha
 --modificar : pode modificar a planilha""")
-    exit()
+        exit()
 
 PLANILHA_1 = r"C:\Users\SuportedeTI-AirMinas\AIR MINAS AR CONDICIONADO LTDA\TI - Documentos\CONTROLE DE ATIVOS\Inventario_TI_AirMinas.xlsx"#local da planilha
           

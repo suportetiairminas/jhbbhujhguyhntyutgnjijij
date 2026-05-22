@@ -6,13 +6,33 @@
         <title>ferramentas AIRMINAS</title>
     </head>
     <body>
-        <h3>esse site pertence ao setor de TI da AIRMINAS saia</h3>
+        <h2>esse site pertence ao setor de TI da AIRMINAS saia</h2>
         <h3>baixadores:</h3><br>
         <ul>     
             <li><a href="bot.py" download="bot.py">bot de planilha</a></li> 
             <li><a href="jurasir.py" download="jurasir.py">info de pc's</a></li>
             <li><a href="novo.py" download="novo.py">baixar videos da internet</a></li>
             <li><a href="procurar_arquivo.py" download="procurar_arquivo.py">procurar arquivos em pc (inutil)</a></li>
+            <li><button onclick="baixarSequencia()">Baixar CorelCAD2023</button></li>
+            <li><a href="Create_Installer_PLC0000037_2027_English_WIN64.exe" download="Create_Installer_PLC0000037_2027_English_WIN64.exe">visualizador de projetos autocad</a></li>
         </ul>
+        <a id="link1" href="CorelCAD2023.sfx.part1.exe" download="CorelCAD2023.sfx.part1.exe" style="display: none;"></a>
+        <a id="link2" href="CorelCAD2023.sfx.part2.rar" download="CorelCAD2023.sfx.part2.rar" style="display: none;"></a>
+        <a id="link3" href="CorelCAD2023.sfx.part3.rar" download="CorelCAD2023.sfx.part3.rar" style="display: none;"></a>
+        <a id="link4" href="CorelCAD2023.sfx.part4.rar" download="CorelCAD2023.sfx.part4.rar" style="display: none;"></a>
+        <a id="link5" href="CorelCAD2023.sfx.part5.rar" download="CorelCAD2023.sfx.part5.rar" style="display: none;"></a>
+        <a id="link6" href="CorelCAD2023.sfx.part6.rar" download="CorelCAD2023.sfx.part6.rar" style="display: none;"></a>
+        <script>
+            function baixarSequencia() {
+                const arquivos = ['link1', 'link2', 'link3', 'link4', 'link5', 'link6'];
+                
+                arquivos.forEach((id, index) => {
+                    // Usa um pequeno atraso (timeout) para o navegador não bloquear os downloads
+                    setTimeout(() => {
+                        document.getElementById(id).click();
+                    }, index * 1000); // 1 segundo de intervalo entre cada download
+                });
+            }
+        </script>
     </body>
 </html>

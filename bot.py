@@ -3,7 +3,8 @@ import os
 from time import sleep as mimir
 import sys
 
-
+PLANILHA_1 = r"C:\Users\SuportedeTI-AirMinas\AIR MINAS AR CONDICIONADO LTDA\TI - Documentos\CONTROLE DE ATIVOS\Inventario_TI_AirMinas.xlsx"#local da planilha
+          
 if len(sys.argv) > 1:
     if sys.argv[1] == "False":
         print("""--achar : acha arquivos em uma planinha
@@ -11,10 +12,7 @@ if len(sys.argv) > 1:
 --modificar : pode modificar a planilha""")
         exit()
 
-PLANILHA_1 = r"C:\Users\SuportedeTI-AirMinas\AIR MINAS AR CONDICIONADO LTDA\TI - Documentos\CONTROLE DE ATIVOS\Inventario_TI_AirMinas.xlsx"#local da planilha
-          
-
-if sys.argv[1] == "--contar":#comando de contar
+elif sys.argv[1] == "--contar":#comando de contar
     os.system("taskkill /im excel.exe /f || cls")
     mimir(2)
     para = False
@@ -57,7 +55,7 @@ if sys.argv[1] == "--contar":#comando de contar
 
     df.to_excel("pertence.xlsx", index=False)
 
-if sys.argv[1] == "--achar":
+elif sys.argv[1] == "--achar":
     os.system("taskkill /im excel.exe /f || cls")
     mimir(2)
 
@@ -104,7 +102,7 @@ if sys.argv[1] == "--achar":
 
     teste.to_excel("pertence.xlsx", index=False)
 
-if sys.argv[1] == "--modificar":
+elif sys.argv[1] == "--modificar":
     os.system("taskkill /im excel.exe /f || cls")
     mimir(2)
 

@@ -3,7 +3,7 @@ import os
 from time import sleep as mimir
 import sys
 
-PLANILHA_1 = r"C:\Users\SuportedeTI-AirMinas\AIR MINAS AR CONDICIONADO LTDA\TI - Documentos\CONTROLE DE ATIVOS\Inventario_TI_AirMinas.xlsx"#local da planilha
+
           
 if len(sys.argv) > 1:
     if sys.argv[1] == "--help":

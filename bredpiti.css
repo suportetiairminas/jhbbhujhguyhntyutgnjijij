@@ -4,3 +4,15 @@ body{
 h2{
     color:  #001432;
 }
+#A1:hover{
+    background-color: rgb(255, 0, 0);
+}
+#A2:hover{
+    background-color: rgb(53, 194, 48);
+}
+#A3:hover{
+    background-color: blue;
+}
+#A3:hover{
+    background-color: blueviolet;
+}

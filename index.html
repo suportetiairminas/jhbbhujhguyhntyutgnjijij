@@ -14,9 +14,10 @@
             <li><a href="jurasir.py" download="jurasir.py">info de pc's</a></li>
             <li><a href="novo.py" download="novo.py">baixar videos da internet</a></li>
             <li><a href="procurar_arquivo.py" download="procurar_arquivo.py">procurar arquivos em pc (inutil)</a></li>
-            <li><button onclick="baixarSequencia()">Baixar CorelCAD2023</button></li>
-            <li><button onclick="baixarSequencia2()">Baixar CorelCAD2021</button></li>
-            <li><button onclick="baixarSequencia3()">impri</button></li>
+            <li><button id="A1" onclick="baixarSequencia()">Baixar CorelCAD2023</button></li>
+            <li><button id="A2" onclick="baixarSequencia2()">Baixar CorelCAD2021</button></li>
+            <li><button id="A3" onclick="baixarSequencia3()">impri</button></li>
+            <li><button id="A4" onclick="baixarSequencia4()">querimpirim</button></li>
             <li><a href="Autodesk_DWG_TrueView_2027_English_en-US_setup_webinstall.zip" download="Autodesk_DWG_TrueView_2027_English_en-US_setup_webinstall.zip">visualizador de projetos autocad</a></li>
         </ul>
         <a id="link1" href="CorelCAD2023.sfx.part01.exe" download="CorelCAD2023.sfx.part01.exe" style="display: none;"></a>
@@ -45,6 +46,10 @@
         <a id="link12f" href="CorelCAD2021_x64.sfx.part12.rar" download="CorelCAD2021_x64.sfx.part12.rar" style="display: none;"></a>
         <a id="link1r" href="imprimi.sfx.part1.exe" download="imprimi.sfx.part1.exe" style="display: none;"></a>
         <a id="link2r" href="imprimi.sfx.part2.rar" download="imprimi.sfx.part2.rar" style="display: none;"></a>
+        <a id="link1i" href="EasySetup_2_9_2_6.sfx.part01.exe" download="EasySetup_2_9_2_6.sfx.part1.exe" style="display: none;"></a>
+        <a id="link2i" href="EasySetup_2_9_2_6.sfx.part02.rar" download="EasySetup_2_9_2_6.sfx.part2.rar" style="display: none;"></a>
+        <a id="link3i" href="EasySetup_2_9_2_6.sfx.part03.rar" download="EasySetup_2_9_2_6.sfx.part3.rar" style="display: none;"></a>
+        <a id="link4i" href="EasySetup_2_9_2_6.sfx.part04.rar" download="EasySetup_2_9_2_6.sfx.part4.rar" style="display: none;"></a>
         <script>
             function baixarSequencia() {
                 const arquivos = ['link1', 'link2', 'link3', 'link4', 'link5', 'link6', 'link7', 'link8', 'link9', 'link10', 'link11', 'link12'];
@@ -68,6 +73,16 @@
             }
             function baixarSequencia2() {
                 const arquivos = ['link1f', 'link2f', 'link3f', 'link4f', 'link5f', 'link6f', 'link7f', 'link8f', 'link9f', 'link10f', 'link11f', 'link12f'];
+                
+                arquivos.forEach((id, index) => {
+                    // Usa um pequeno atraso (timeout) para o navegador não bloquear os downloads
+                    setTimeout(() => {
+                        document.getElementById(id).click();
+                    }, index * 1000); // 1 segundo de intervalo entre cada download
+                });
+            }
+            function baixarSequencia4() {
+                const arquivos = ['link1i', 'link2i','link3i','link4i'];
                 
                 arquivos.forEach((id, index) => {
                     // Usa um pequeno atraso (timeout) para o navegador não bloquear os downloads
